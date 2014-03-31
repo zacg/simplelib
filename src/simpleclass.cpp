@@ -4,11 +4,11 @@ std::string SimpleClass::hello(){
 	return "world";
 }
 
-void SimpleClass::hello(std::vector<std::string> *results){
+void SimpleClass::helloString(std::vector<std::string> *results){
 	results->push_back("world");
 }
 
-void SimpleClass::hello(std::vector<char> *results){
+void SimpleClass::helloBytes(std::vector<char> *results){
 	results->push_back('w');
 	results->push_back('o');
 	results->push_back('r');

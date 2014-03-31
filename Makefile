@@ -45,7 +45,7 @@ obj/simpleclass.o: src/simpleclass.cpp inc/simpleclass.h
 #    $(SWIG) $(SWIGFLAGS) $<
 
 simplelib_wrap.cxx:
-	swig -go -c++ -intgosize 64 simplelib.swig
+	swig -go -c++ -intgosize 64 -soname libSimpleLib.so simplelib.swig
 
 .PHONY: clean cleanall
 
@@ -54,6 +54,11 @@ clean:
 
 cleanall: clean
 	rm -f $(OUT)
+	rm -f *.6
+	rm -f *.a
+	rm -f *.so
+	rm -f *.cxx
+	rm -f *.c
 
 build:
 	@echo "Building bindings..."
@@ -64,8 +69,10 @@ build:
 	
 install:
 	@echo "Installing go package..."
+	mv simplelib.swig simplelib.notswig
 	export GOPATH=$$HOME/dev/go/; \
 	$(EXE)go install
+	mv simplelib.notswig simplelib.swig
 
 	@echo "Installing go shared lib..."
 	sudo cp -f lib/libSimpleLib.so /usr/local/lib/

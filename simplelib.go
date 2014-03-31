@@ -244,42 +244,22 @@ func NewSimpleClass() SimpleClass {
 	return _swig_wrap_new_SimpleClass()
 }
 
-func _swig_wrap_SimpleClass_hello__SWIG_0(SwigcptrSimpleClass) string
+func _swig_wrap_SimpleClass_hello(SwigcptrSimpleClass) string
 
-func (arg1 SwigcptrSimpleClass) Hello__SWIG_0() string {
-	return _swig_wrap_SimpleClass_hello__SWIG_0(arg1)
+func (arg1 SwigcptrSimpleClass) Hello() string {
+	return _swig_wrap_SimpleClass_hello(arg1)
 }
 
-func _swig_wrap_SimpleClass_hello__SWIG_1(SwigcptrSimpleClass, uintptr)
+func _swig_wrap_SimpleClass_helloString(SwigcptrSimpleClass, uintptr)
 
-func (arg1 SwigcptrSimpleClass) Hello__SWIG_1(arg2 StringVector) {
-	_swig_wrap_SimpleClass_hello__SWIG_1(arg1, arg2.Swigcptr())
+func (arg1 SwigcptrSimpleClass) HelloString(arg2 StringVector) {
+	_swig_wrap_SimpleClass_helloString(arg1, arg2.Swigcptr())
 }
 
-func _swig_wrap_SimpleClass_hello__SWIG_2(SwigcptrSimpleClass, uintptr)
+func _swig_wrap_SimpleClass_helloBytes(SwigcptrSimpleClass, uintptr)
 
-func (arg1 SwigcptrSimpleClass) Hello__SWIG_2(arg2 ByteVector) {
-	_swig_wrap_SimpleClass_hello__SWIG_2(arg1, arg2.Swigcptr())
-}
-
-func (p SwigcptrSimpleClass) Hello(a ...interface{}) interface{} {
-	argc := len(a)
-	if argc == 0 {
-		return p.Hello__SWIG_0()
-	}
-	if argc == 1 {
-		if _, ok := a[0].(SwigcptrStringVector); !ok {
-			goto check_2
-		}
-		p.Hello__SWIG_1(a[0].(StringVector))
-		return 0
-	}
-check_2:
-	if argc == 1 {
-		p.Hello__SWIG_2(a[0].(ByteVector))
-		return 0
-	}
-	panic("No match for overloaded function call")
+func (arg1 SwigcptrSimpleClass) HelloBytes(arg2 ByteVector) {
+	_swig_wrap_SimpleClass_helloBytes(arg1, arg2.Swigcptr())
 }
 
 func _swig_wrap_delete_SimpleClass(uintptr)
@@ -291,7 +271,9 @@ func DeleteSimpleClass(arg1 SimpleClass) {
 type SimpleClass interface {
 	Swigcptr() uintptr
 	SwigIsSimpleClass()
-	Hello(a ...interface{}) interface{}
+	Hello() string
+	HelloString(arg2 StringVector)
+	HelloBytes(arg2 ByteVector)
 }
 
 

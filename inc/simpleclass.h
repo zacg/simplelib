@@ -7,10 +7,10 @@
 class SimpleClass
 {
 public:
-    SimpleClass();
+    SimpleClass(){};
     std::string hello();
-    void hello(std::vector<std::string> *results);
-    void hello(std::vector<char> *results);
+    void helloString(std::vector<std::string> *results);
+    void helloBytes(std::vector<char> *results);
 };
 
 #endif

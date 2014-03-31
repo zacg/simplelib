@@ -9,7 +9,7 @@
  * ----------------------------------------------------------------------------- */
 
 /* This file should be compiled with 6c/8c.  */
-#pragma dynimport _ _ "simplelib.so"
+#pragma dynimport _ _ "libSimpleLib.so"
 
 #include "runtime.h"
 #include "cgocall.h"
@@ -365,47 +365,47 @@ void
 
 
 
-#pragma dynimport _wrap_SimpleClass_hello__SWIG_0 _wrap_SimpleClass_hello__SWIG_0 ""
-extern void (*_wrap_SimpleClass_hello__SWIG_0)(void*);
-static void (*x_wrap_SimpleClass_hello__SWIG_0)(void*) = _wrap_SimpleClass_hello__SWIG_0;
+#pragma dynimport _wrap_SimpleClass_hello _wrap_SimpleClass_hello ""
+extern void (*_wrap_SimpleClass_hello)(void*);
+static void (*x_wrap_SimpleClass_hello)(void*) = _wrap_SimpleClass_hello;
 
 void
-·_swig_wrap_SimpleClass_hello__SWIG_0(struct {
+·_swig_wrap_SimpleClass_hello(struct {
   uint8 x[SWIG_PARM_SIZE + SWIG_PARM_SIZE + (2 * SWIG_PARM_SIZE)];
 } p)
 
 {
-  runtime·cgocall(x_wrap_SimpleClass_hello__SWIG_0, &p);
+  runtime·cgocall(x_wrap_SimpleClass_hello, &p);
 }
 
 
 
-#pragma dynimport _wrap_SimpleClass_hello__SWIG_1 _wrap_SimpleClass_hello__SWIG_1 ""
-extern void (*_wrap_SimpleClass_hello__SWIG_1)(void*);
-static void (*x_wrap_SimpleClass_hello__SWIG_1)(void*) = _wrap_SimpleClass_hello__SWIG_1;
+#pragma dynimport _wrap_SimpleClass_helloString _wrap_SimpleClass_helloString ""
+extern void (*_wrap_SimpleClass_helloString)(void*);
+static void (*x_wrap_SimpleClass_helloString)(void*) = _wrap_SimpleClass_helloString;
 
 void
-·_swig_wrap_SimpleClass_hello__SWIG_1(struct {
+·_swig_wrap_SimpleClass_helloString(struct {
   uint8 x[SWIG_PARM_SIZE + SWIG_PARM_SIZE + SWIG_PARM_SIZE];
 } p)
 
 {
-  runtime·cgocall(x_wrap_SimpleClass_hello__SWIG_1, &p);
+  runtime·cgocall(x_wrap_SimpleClass_helloString, &p);
 }
 
 
 
-#pragma dynimport _wrap_SimpleClass_hello__SWIG_2 _wrap_SimpleClass_hello__SWIG_2 ""
-extern void (*_wrap_SimpleClass_hello__SWIG_2)(void*);
-static void (*x_wrap_SimpleClass_hello__SWIG_2)(void*) = _wrap_SimpleClass_hello__SWIG_2;
+#pragma dynimport _wrap_SimpleClass_helloBytes _wrap_SimpleClass_helloBytes ""
+extern void (*_wrap_SimpleClass_helloBytes)(void*);
+static void (*x_wrap_SimpleClass_helloBytes)(void*) = _wrap_SimpleClass_helloBytes;
 
 void
-·_swig_wrap_SimpleClass_hello__SWIG_2(struct {
+·_swig_wrap_SimpleClass_helloBytes(struct {
   uint8 x[SWIG_PARM_SIZE + SWIG_PARM_SIZE + SWIG_PARM_SIZE];
 } p)
 
 {
-  runtime·cgocall(x_wrap_SimpleClass_hello__SWIG_2, &p);
+  runtime·cgocall(x_wrap_SimpleClass_helloBytes, &p);
 }
 
 

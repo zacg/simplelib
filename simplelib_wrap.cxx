@@ -215,7 +215,7 @@ static _gostring_ _swig_makegostring(const char *p, size_t l) {
   if (!(expr)) { _swig_gopanic(msg); } else
 
 
-#include "inc/simpleclass.h"
+	#include "inc/simpleclass.h"
 
 
 #include <string>
@@ -723,7 +723,7 @@ _wrap_new_SimpleClass(void *swig_v)
 
 
 void
-_wrap_SimpleClass_hello__SWIG_0(void *swig_v)
+_wrap_SimpleClass_hello(void *swig_v)
 {
   SimpleClass *arg1 = (SimpleClass *) 0 ;
   std::string result;
@@ -742,7 +742,7 @@ _wrap_SimpleClass_hello__SWIG_0(void *swig_v)
 
 
 void
-_wrap_SimpleClass_hello__SWIG_1(void *swig_v)
+_wrap_SimpleClass_helloString(void *swig_v)
 {
   SimpleClass *arg1 = (SimpleClass *) 0 ;
   std::vector< std::string > *arg2 = (std::vector< std::string > *) 0 ;
@@ -755,13 +755,13 @@ _wrap_SimpleClass_hello__SWIG_1(void *swig_v)
   arg1 = *(SimpleClass **)&swig_a->arg1; 
   arg2 = *(std::vector< std::string > **)&swig_a->arg2; 
   
-  (arg1)->hello(arg2);
+  (arg1)->helloString(arg2);
   
 }
 
 
 void
-_wrap_SimpleClass_hello__SWIG_2(void *swig_v)
+_wrap_SimpleClass_helloBytes(void *swig_v)
 {
   SimpleClass *arg1 = (SimpleClass *) 0 ;
   std::vector< char > *arg2 = (std::vector< char > *) 0 ;
@@ -774,7 +774,7 @@ _wrap_SimpleClass_hello__SWIG_2(void *swig_v)
   arg1 = *(SimpleClass **)&swig_a->arg1; 
   arg2 = *(std::vector< char > **)&swig_a->arg2; 
   
-  (arg1)->hello(arg2);
+  (arg1)->helloBytes(arg2);
   
 }
 
