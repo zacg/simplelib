@@ -14,13 +14,12 @@ OBJPATH=obj
 LIBPATH=lib
 BINPATH=bin
 
-INC=$(INCPATH)/simpleclass.h
-SRC=$(SRCPATH)/simpleclass.cpp
 OBJS=$(OBJPATH)/simpleclass.o $(OBJPATH)/simplelib_wrap.o
 OUT=$(LIBPATH)/libSimpleLib.so
 
 INCLUDES=-I ./$(INCPATH)
 
+#Set this to your go installation directory
 EXE=$$HOME/dev/goinstallation/go/bin/
 export PATH := bin:$(PATH)
 
@@ -35,14 +34,6 @@ obj/simplelib_wrap.o: simplelib_wrap.cxx inc/simpleclass.h
 obj/simpleclass.o: src/simpleclass.cpp inc/simpleclass.h
 	$(CC) $(CXXFLAGS) $(INCLUDES) -fpic -c $< -o $@
 
-#$(OBJPATH)/%.o: $(SRCPATH)/%.cpp $(INC)
-#	$(CC) $(CXXFLAGS) $(INCLUDES) -fpic -c $< -o $@
-
-#$(OBJPATH)/%.o: $(SRCPATH)/%.cxx
-#    $(CC) $(CXXFLAGS) $(INCLUDES) -fpic -c $< -o $@
-
-#%.cxx: %.swg
-#    $(SWIG) $(SWIGFLAGS) $<
 
 simplelib_wrap.cxx:
 	swig -go -c++ -intgosize 64 -soname libSimpleLib.so simplelib.swig
@@ -69,6 +60,7 @@ build:
 	
 install:
 	@echo "Installing go package..."
+	#Rename swig file so go install command does not try to reprocess it
 	mv simplelib.swig simplelib.notswig
 	export GOPATH=$$HOME/dev/go/; \
 	$(EXE)go install
