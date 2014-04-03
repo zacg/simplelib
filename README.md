@@ -1,7 +1,7 @@
 simplelib
 =========
 
-This project demonstrates how to create a Go (golang) package from a c++ class using [SWIG](http://www.swig.org/Doc3.0/Go.html)
+This project demonstrates how to create a Go (golang) package from a c++ class using [SWIG](http://www.swig.org/Doc3.0/Go.html) Read detailed instructions here: [http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/](http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/)
 
 
 #### Details
@@ -14,6 +14,10 @@ This project demonstrates how to create a Go (golang) package from a c++ class u
 #####Installing
 
 	make install
+
+#####Clean
+
+	make cleanall
 
 #####Running
 

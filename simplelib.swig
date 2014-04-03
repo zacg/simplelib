@@ -1,8 +1,4 @@
 %module simplelib
-%{
-	#include "inc/simpleclass.h"
-%}
-
 
 %include <typemaps.i>
 %include "std_string.i"
