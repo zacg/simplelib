@@ -21,32 +21,33 @@ This project demonstrates how to create a Go (golang) package from a c++ class u
 
 #####Running
 
-	package main
+```go
+package main
 
-	import (
-		"fmt"
-		"github.com/zacg/simplelib"
-		)
+import (
+	"fmt"
+	"github.com/zacg/simplelib"
+	)
 
-	func main() {
+func main() {
 
-		simpleClass := simplelib.NewSimpleClass()
-		result := simpleClass.Hello()
-		fmt.Println(result)
+	simpleClass := simplelib.NewSimpleClass()
+	result := simpleClass.Hello()
+	fmt.Println(result)
 
-		strings := simplelib.NewStringVector()
-		simpleClass.HelloString(strings)
+	strings := simplelib.NewStringVector()
+	simpleClass.HelloString(strings)
 
-		for i := 0; i < strings.Size(); i++ {
-			fmt.Println(strings.Get(i))
-		}
-
-		bytes := simplelib.NewByteVector()
-		simpleClass.HelloBytes(bytes)
-
-		for i := 0; i < bytes.Size(); i++ {
-			fmt.Printf("%s", string(bytes.Get(i)))
-		}
-	
+	for i := 0; i < strings.Size(); i++ {
+		fmt.Println(strings.Get(i))
 	}
-	
+
+	bytes := simplelib.NewByteVector()
+	simpleClass.HelloBytes(bytes)
+
+	for i := 0; i < bytes.Size(); i++ {
+		fmt.Printf("%s", string(bytes.Get(i)))
+	}
+
+}
+```	
