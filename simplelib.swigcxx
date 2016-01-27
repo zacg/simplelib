@@ -1,4 +1,7 @@
 %module simplelib
+%{
+#include "simpleclass.h"
+%}
 
 %include <typemaps.i>
 %include "std_string.i"
@@ -13,4 +16,3 @@ namespace std {
 }
 
 %include "simpleclass.h"
-
