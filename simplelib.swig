@@ -12,5 +12,5 @@ namespace std {
    %template(ByteVector) vector<char>;
 }
 
-%include "inc/simpleclass.h"
+%include "simpleclass.h"
 
