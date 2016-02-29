@@ -1,4 +1,7 @@
 %module simplelib
+%{
+#include "simpleclass.h"
+%}
 
 %include <typemaps.i>
 %include "std_string.i"
@@ -12,5 +15,4 @@ namespace std {
    %template(ByteVector) vector<char>;
 }
 
-%include "inc/simpleclass.h"
-
+%include "simpleclass.h"

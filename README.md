@@ -1,25 +1,23 @@
 simplelib
 =========
 
-This project demonstrates how to create a Go (golang) package from a c++ class using [SWIG](http://www.swig.org/Doc3.0/Go.html) Read detailed instructions here: [http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/](http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/)
+This project demonstrates how to create a Go (golang) package from a C++ class using [SWIG](http://www.swig.org/Doc3.0/Go.html).
 
+This code was originally for a blog post here:
+[http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/](http://zacg.github.io/blog/2013/06/06/calling-c-plus-plus-code-from-go-with-swig/),
+but the instructions refer to earlier versions of Go (before 1.5) and
+SWIG (before 3.0).
 
-#### Details
+#####Getting Started
 
-#####Building
+	go get github.com/zacg/simplelib
+    cd $GOPATH/src/github.com/zacg/simplelib
+	go install
+    go test
 
-	cd simplelib
-	make
+#####Example Application Code
 
-#####Installing
-
-	make install
-
-#####Clean
-
-	make cleanall
-
-#####Running
+You an also look at the unit tests in `simplelib_test.go`.
 
 ```go
 package main
@@ -27,7 +25,7 @@ package main
 import (
 	"fmt"
 	"github.com/zacg/simplelib"
-	)
+)
 
 func main() {
 
@@ -38,16 +36,18 @@ func main() {
 	strings := simplelib.NewStringVector()
 	simpleClass.HelloString(strings)
 
-	for i := 0; i < strings.Size(); i++ {
-		fmt.Println(strings.Get(i))
+	var i int64
+	for i = 0; i < strings.Size(); i++ {
+		fmt.Println(strings.Get(int(i)))
 	}
 
 	bytes := simplelib.NewByteVector()
 	simpleClass.HelloBytes(bytes)
 
-	for i := 0; i < bytes.Size(); i++ {
-		fmt.Printf("%s", string(bytes.Get(i)))
+	for i = 0; i < bytes.Size(); i++ {
+		fmt.Printf("%c", bytes.Get(int(i)))
 	}
+	fmt.Println("")
 
 }
 ```	
