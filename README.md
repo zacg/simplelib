@@ -10,12 +10,25 @@ SWIG (before 3.0).
 
 #####Getting Started
 
+    cd $GOPATH
 	go get github.com/zacg/simplelib
     cd $GOPATH/src/github.com/zacg/simplelib
-	go install
-    go test
+	go install -x
+    go test -v
 
-#####Example Application Code
+
+#####Generating simplelib.go and simplelib_wrap.cxx
+
+These files are needed by simplelib_test.go. You need to do this each time the dependent \*.h or \*.cpp files change.
+
+    swig -go -cgo -c++ -intgosize 64 simplelib.i
+
+To clean up the auto-generated files:
+
+    \rm -f simplelib.go simplelib_wrap.cxx 
+    
+
+#####Example Application Code that uses simplelib.go and simplelib_wrap.cxx
 
 You an also look at the unit tests in `simplelib_test.go`.
 

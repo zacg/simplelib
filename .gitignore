@@ -6,6 +6,8 @@
 # Folders
 _obj
 _test
+.git
+.idea
 
 # Architecture specific extensions/prefixes
 *.[568vq]
@@ -21,3 +23,7 @@ _testmain.go
 
 *.exe
 *.test
+
+# Auto generated files by Swig:
+simplelib.go
+simplelib_wrap.cxx
